@@ -1,0 +1,224 @@
+/* ====== Tổng thể layout ====== */
+.home-container {
+  padding: 20px;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ====== Phần chào mừng ====== */
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  background: #FFF9C4; /* Vàng nhạt */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.welcome-text h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.welcome-text p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Nút tải tài liệu mới */
+.upload-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #1976D2; /* Xanh đậm chuyên nghiệp */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #1565C0;
+}
+
+/* ====== Thống kê nhanh ====== */
+.stats-section {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.light-blue {
+  background-color: #E3F2FD;
+  color: #0D47A1;
+}
+
+.light-purple {
+  background-color: #EDE7F6;
+  color: #4527A0;
+}
+
+.light-pink {
+  background-color: #FCE4EC;
+  color: #AD1457;
+}
+
+.stat-card h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ====== Bố cục chính cho phần tài liệu và lịch nằm ngang ====== */
+.main-content {
+  display: flex;
+  gap: 30px; /* Khoảng cách giữa 2 phần */
+  margin-bottom: 40px;
+}
+
+/* ====== Khung riêng cho từng phần tài liệu và lịch ====== */
+.document-section,
+.schedule-section {
+  flex: 1; /* chia đều chiều ngang */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  max-height: 600px; /* Giới hạn chiều cao */
+  overflow-y: auto; /* Cuộn nếu nội dung dài */
+}
+
+/* Tiêu đề box */
+.box-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #212121;
+  border-bottom: 2px solid #1976D2;
+  padding-bottom: 8px;
+}
+
+/* ==========================
+   CARD CHUNG CHO TÀI LIỆU & LỊCH
+========================== */
+.card-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-item:hover {
+  background-color: #f4f8ff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ==========================
+   PHẦN TÀI LIỆU NỔI BẬT
+========================== */
+.document-list {
+  margin-bottom: 0; /* Không cần margin dưới vì card-item đã có */
+}
+
+.document-list .card-item {
+  flex-direction: column;
+}
+
+.doc-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #212121;
+  margin-bottom: 6px;
+}
+
+.doc-date {
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 10px;
+}
+
+.doc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+  color: #616161;
+  line-height: 1.8;
+}
+
+/* ==========================
+   PHẦN LỊCH HÔM NAY
+========================== */
+.schedule-list {
+  margin-bottom: 0;
+}
+
+.schedule-list .card-item {
+  flex-direction: column;
+}
+
+.time {
+  color: #1976D2;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.activity {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.assigned {
+  font-size: 14px;
+  color: #757575;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ====== Responsive cho mobile/tablet ====== */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .stats-section {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    margin-bottom: 10px;
+  }
+
+  .document-section,
+  .schedule-section {
+    max-height: none;
+    margin-bottom: 30px;
+  }
+}

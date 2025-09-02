@@ -1,0 +1,184 @@
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fb; /* nền dịu, dễ nhìn */
+  padding: 2rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #eef2f7;
+}
+
+.login-logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.login-title {
+  margin: 6px 0 6px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1f2a37;
+  letter-spacing: 0.4px;
+}
+
+.login-sub {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Form */
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Thay đổi tại đây: bỏ khung input */
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f8f9fb;
+  border-radius: 10px;
+  padding: 12px 12px 12px 40px; /* space for icon */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  /* Bỏ khung viền: dùng nền đã có; không còn border */
+  border: none;
+  /* Optional: bỏ shadow khi focus nếu muốn giữ hiệu ứng khác */
+}
+
+/* Nếu bạn muốn bỏ cả background viền khi focus, bỏ phần này hoặc giữ nền như hiện tại. */
+.input-wrap .input-ic {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+.input-wrap input {
+  width: 100%;
+  border: none;        /* bỏ viền của input */
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0;
+  color: #111827;
+}
+
+.input-wrap input::placeholder {
+  color: #9ca3af;
+}
+
+.input-wrap:focus-within {
+  /* Nếu bỏ viền, vẫn có thể giữ hiệu ứng màu sắc nền hoặc box-shadow tùy chọn */
+  /* Ví dụ: thêm shadow nhẹ khi focus để người dùng nhận biết trường đang nhập */
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  background: #ffffff;
+}
+
+/* Password toggle */
+.pw-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  width: 28px;
+  border: none;
+  background: transparent;
+  color: #374151;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pw-toggle:hover {
+  color: #111827;
+  opacity: 0.9;
+}
+
+.pw-toggle:focus {
+  outline: none;
+}
+
+/* Extra links */
+.login-extra {
+  width: 100%;
+  text-align: right;
+  margin: 6px 0 6px;
+}
+
+.forgot-link {
+  font-size: 0.92rem;
+  color: #3b82f6;
+  text-decoration: none;
+}
+.forgot-link:hover,
+.forgot-link:focus {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.login-btn {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.05s ease-in-out, background 0.2s ease;
+}
+
+.login-btn[disabled] {
+  background: #a3a3a3;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.login-btn:not([disabled]):hover {
+  background: #3366d6;
+  transform: translateY(-1px);
+}
+
+.login-btn:not([disabled]):focus {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* Small screens adjustments (optional) */
+@media (max-width: 420px) {
+  .login-card {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .login-logo {
+    width: 100px;
+  }
+}
